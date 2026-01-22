@@ -2,6 +2,7 @@ package com.kyaw.shoppingcart.controllers;
 
 import com.kyaw.shoppingcart.dto.ProductDto;
 import com.kyaw.shoppingcart.service.ProductService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +28,17 @@ public class ProductController {
     @GetMapping
     public List<ProductDto> getAllProducts() {
         return productService.getAllProducts();
+    }
+
+    //Delete
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable Integer id) {
+        try {
+            productService.deleteProduct(id);
+            return ResponseEntity.noContent().build();
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

@@ -31,3 +31,23 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Local environment secrets and overrides
+.env
+.env.*
+*.env
+*.env.*
+application-*.yml
+application-*.properties
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node tooling (if present)
+node_modules/
+package-lock.json
+yarn.lock

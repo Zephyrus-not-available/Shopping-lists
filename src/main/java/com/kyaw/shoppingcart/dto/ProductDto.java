@@ -21,6 +21,7 @@ public record ProductDto(
         String description,
         Date createdAt,
         Date updatedAt,
-        String imageFileName
+        String imageFileName,
+        String imageBase64
 ) {
 }
